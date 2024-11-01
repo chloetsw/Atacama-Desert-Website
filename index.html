@@ -1,0 +1,339 @@
+<!DOCTYPE html>
+<html lang="en">
+    <head>
+        <meta charset="UTF-8">
+        <meta name="viewport" content="width=device-width, initial-scale=1.0">
+        <title>The Atacama Desert</title>
+
+        <!--CSS stylesheet-->
+        <link rel="stylesheet" href="style.css">
+        <!--Font links-->
+        <link href="https://www.ffonts.net/Bellet-Regular.font.download" rel="stylesheet" type="text/css">
+        <!--Shoelace-->
+        <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/@shoelace-style/shoelace@2.18.0/cdn/themes/light.css">
+        
+    </head>
+
+    <body>
+        <!--Navigation Bar-->
+        <nav id="navbar">
+            <a href="#home">Home</a>
+            <a href="#about">About</a>
+            <a href="#fashion-show">Fashion Show</a>
+            <a href="#how-to-help">How to Help</a>
+        </nav>
+
+        <div id="main" class="scroll-container">
+            <!--Hero Page-->
+            <section  id="home">
+                <div>
+                    <div class="hero-image">
+                        <span id="hero-text"></span>    
+                        <!-- Scroll Icon at the Bottom Center -->
+                        <div class="scroll-icon-container">
+                            <svg xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink" aria-hidden="true" 
+                            focusable="false" width="1em" height="1em" style="-ms-transform: rotate(360deg); -webkit-transform: rotate(360deg); 
+                            transform: rotate(360deg);" preserveAspectRatio="xMidYMid meet" viewBox="0 0 20 20"><path d="M5 6l5 5l5-5l2 1l-7 7l-7-7z" 
+                            fill="#ffffff35"/><rect x="0" y="0" width="20" height="20" fill="rgba(0, 0, 0, 0)" /></svg>
+                        </div>
+                    </div>
+                </div>
+            </section>
+
+            <!--About Section-->
+            <section  id="about">
+                <section class="comparisonSection">
+                    <div class="comparisonImage beforeImage">
+                        <img src="images/valley-moon-atacama-desert-chile.jpg" alt="before">
+                    </div>
+                    <div class="comparisonImage afterImage" > 
+                        <div class="info-buttons"><!--Interactive hover info buttons-->
+                            <sl-tooltip content="Many fast fashion brands use synthetic materials like polyester and nylon, 
+                                which are derived from petroleum and take centuries to break down, causing long-lasting environmental waste.">
+                                <sl-icon-button id="material" name="globe-americas" style="font-size: 40px; color: white;"></sl-icon-button>
+                            </sl-tooltip>
+                            <sl-tooltip content="Fast fashion significantly adds to greenhouse gas emissions during production and disposal, 
+                                fueling global warming and worsening the climate crisis.">
+                                <sl-icon-button id="ghg-emissions" name="globe-americas" style="font-size: 40px; color: white;"></sl-icon-button>
+                            </sl-tooltip>
+                            <sl-tooltip content="The textile dyeing process used in fast fashion is a major contributor to water pollution and wastage, 
+                                with chemicals from dyes often entering rivers and impacting clean water supplies.">
+                                <sl-icon-button id="water-effect" name="globe-americas" style="font-size: 40px; color: white;"></sl-icon-button>
+                            </sl-tooltip>
+                            <sl-tooltip content="To keep prices low, fast fashion often relies on low-wage labor in poor conditions, 
+                                putting workers at risk with long hours and minimal pay, sometimes in unsafe environments.">
+                                <sl-icon-button id="labour-impact" name="globe-americas" style="font-size: 40px; color: white;"></sl-icon-button>
+                            </sl-tooltip>
+                        </div>
+                        <img src="images/MM9940_220518_0582.jpeg" alt="after">
+                    </div>
+                </section>
+                <div class="overlayInfo"> <!--Quick facts-->
+                    <div class="stats">
+                        <span id="tons"></span>
+                        <p><span style="font-size: 30px; color:#ff6200;">TONS</span></p>
+                        <p>of unwanted clothing is <span class="highlight">illegally</span> dumped in the Atacama Desert every year</p>
+                    </div>
+                    <div class="additional-info">
+                        <div class="info-block">
+                            <p style="font-family:Georgia, 'Times New Roman', Times, serif; font-size: 60px; color:#ff6200;"><span id="carbon"></span><span>%</span></p>
+                            <p>of <span class="highlight">global carbon emissions</span> are the result of the fast fashion industry</p>
+                        </div>
+                        <div class="info-block">
+                            <p style="font-family:Georgia, 'Times New Roman', Times, serif; font-size: 60px; color:#ff6200;"><span id="water"></span><span>%</span></p>
+                            <p>of <span class="highlight">waste water</span> is due to the production of fast fashion</p>
+                        </div>
+                    </div>
+                </div>
+                <div class="carousel"> <!--Clothing image gallery-->
+                    <h2 class="found">What we've found...</h2>
+                    <sl-carousel autoplay loop navigation pagination style ="--scroll-hint: 30%; --aspect-ratio:1/1;"> <!--https://shoelace.style/components/carousel-->
+                        <sl-carousel-item>
+                          <img
+                            alt="dirty white shirt"
+                            src="images/shirt.png"
+                          >
+                        </sl-carousel-item>
+                        <sl-carousel-item>
+                          <img
+                            alt="dirty button shirt"
+                            src="images/buttonshirt.png"
+                          >
+                        </sl-carousel-item>
+                        <sl-carousel-item>
+                          <img
+                            alt="ripped denim shorts"
+                            src="images/shorts.png"
+                          >
+                        </sl-carousel-item>
+                        <sl-carousel-item>
+                          <img
+                            alt="dirty pants"
+                            src="images/pants.png"
+                          >
+                        </sl-carousel-item>
+                        <sl-carousel-item>
+                          <img
+                            alt="dirty pants"
+                            src="images/greyhoodie.png"
+                          >
+                          </sl-carousel-item>
+                    </sl-carousel>  
+                </div>
+            </section>
+
+            <!--Fashion Show Section-->
+            <section id="fashion-show">
+                <div class="marquee">
+                    <div class="track">
+                      <div class="content">&nbsp;✦ The Atacama Desert Fashion Week ✦ The Atacama Desert Fashion Week ✦ The Atacama Desert Fashion Week ✦</div>
+                    </div>
+                  </div>
+                <p>The Atacama Fashion Week is a unique event held in Chile’s Atacama Desert, aiming to shed light on the environmental issues caused by discarded clothing waste. 
+                    It transforms this challenging landscape into a fashion runway where models showcase upcycled designs made from clothing salvaged from waste piles. The event 
+                    brings attention to the pressing need for sustainable fashion, blending style with environmental awareness in a dramatic, real-world setting.</p>
+                <div class="ratio">
+                    <iframe id="videoDesfile" src="https://player.vimeo.com/video/939294551?badge=0&amp;autopause=0&amp;player_id=0&amp;app_id=58479" 
+                    frameborder="0" allow="autoplay; fullscreen; picture-in-picture; clipboard-write" title="AFW_Desfile_1920x1080_" data-ready="true"></iframe>
+                    <script src="https://player.vimeo.com/api/player.js"></script>
+                </div>
+                 <!--Links to atacama desert fashion show-->
+                 <div class="buttons">
+                    <button class="blob-btn" onclick="window.open('https://atacamafashionweek.com/', '_blank')" >
+                      Visit The Atacama Fashion Week
+                      <span class="blob-btn__inner">
+                        <span class="blob-btn__blobs">
+                          <span class="blob-btn__blob"></span>
+                          <span class="blob-btn__blob"></span>
+                          <span class="blob-btn__blob"></span>
+                          <span class="blob-btn__blob"></span>
+                        </span>
+                      </span>
+                    </button>
+                    <br>
+                  <svg xmlns="http://www.w3.org/2000/svg" version="1.1">
+                    <defs>
+                      <filter id="goo">
+                        <feGaussianBlur in="SourceGraphic" result="blur" stdDeviation="10"></feGaussianBlur>
+                        <feColorMatrix in="blur" mode="matrix" values="1 0 0 0 0 0 1 0 0 0 0 0 1 0 0 0 0 0 21 -7" result="goo"></feColorMatrix>
+                        <feBlend in2="goo" in="SourceGraphic" result="mix"></feBlend>
+                      </filter>
+                    </defs>
+                  </svg>   
+                </div>
+            
+                <!--Parallex image scroll gallery-->
+                <div class="container">
+                    <div id="level1" class="row">
+                        <div class="col1">
+                            <div class="gallery">                           
+                                <div class="gallery_item">
+                                    <img src="images/fashion-show/2685 (1).avif" alt="fashion outfit 1">
+                                </div>
+                                <div class="gallery_item">                                      
+                                    <img src="images/fashion-show/2685.avif" alt="fashion outfit 2">
+                                </div>    
+                                <div class="gallery_item">
+                                    <img src="images/fashion-show/Atacama-Look-1-684x1024.jpg" alt="fashion outfit 3">
+                                </div>    
+                                <div class="gallery_item">
+                                    <img src="images/fashion-show/Atacama-Look-6-684x1024.jpg" alt="fashion outfit 4">
+                                </div>
+                                <div class="gallery_item">
+                                    <img src="images/fashion-show/Atacama-Look-7-684x1024.jpg" alt="fashion outfit 5">
+                                </div>
+                            </div>    
+                        </div>
+                    </div>
+                    <div id="level2" class="row">
+                         <div class="col2">
+                            <div class="gallery">
+                                 <div class="gallery_item">
+                                    <img src="images/fashion-show/1821(1).jpg" alt="fashion outfit 6">
+                                </div>
+                                <div class="gallery_item">
+                                    <img src="images/fashion-show/1821(2).jpg" alt="fashion outfit 7">
+                                </div>  
+                                <div class="gallery_item">
+                                    <img src="images/fashion-show/Atacama-Look-3-684x1024.jpg" alt="fashion outfit 8">
+                                </div>    
+                                <div class="gallery_item">
+                                    <img src="images/fashion-show/Atacama-Look4-684x1024.jpg" alt="fashion outfit 9">
+                                </div>    
+                            </div>    
+                        </div>
+                    </div> 
+                    <div id="level3" class="row">
+                        <div class="col3">
+                            <div class="gallery">
+                                <div class="gallery_item">
+                                    <img src="images/fashion-show/1821(7).jpg" alt="fashion outfit 10">
+                                </div>    
+                                <div class="gallery_item">
+                                    <img src="images/fashion-show/1821.jpg" alt="fashion outfit 11">
+                                </div>    
+                                <div class="gallery_item">
+                                    <img src="images/fashion-show/Atacama-Look-5-684x1024.jpg" alt="fashion outfit 12">
+                                </div>        
+                                <div class="gallery_item">
+                                    <img src="images/fashion-show/Atacama-Look-8-684x1024.jpg" alt="fashion outfit 13">
+                                </div>            
+                            </div>    
+                        </div>
+                    </div>  
+                </div>
+            </section>
+
+            <!--How to Help Section-->
+            <section id="how-to-help"> 
+                <!--Fashion impact quiz-->
+                <section id="fashion-footprint-quiz" >
+                    <div class="main">
+                        <img src="images/10004491.png" width="90" height="90" alt="recycling icon">
+                        <svg id="rotatingText" viewBox="0 0 200 200" width="250" height="250">
+                            <defs>
+                            <path id="circle" d="M 100, 100
+                                m -75, 0
+                                a 75, 75 0 1, 0 150, 0
+                                a 75, 75 0 1, 0 -150, 0
+                                ">
+                            </path>
+                            </defs>
+                            <text width="400">
+                            <textPath alignment-baseline="top" xlink:href="#circle" class="text">
+                                It is never too late..It is never too late..
+                            </textPath>
+                            </text>
+                        </svg>
+                    </div>
+                    <h2>It is in your hands.</h2>
+                    <p>Take this quiz to find out how much you are impacting the environment</p>
+                  
+                    <!-- Embed the ThredUp quiz using an iframe -->
+                    <iframe 
+                      src="https://form.jotform.com/velichor/do-you-contribute-to-fast-fashion" 
+                      width="100%" 
+                      height="600px" 
+                      style="border: 5px solid black; border-radius: 20px;" 
+                      allow="fullscreen">
+                    </iframe>
+                </section>
+                <div class="articles">
+                    <h2>Make a <span>change.</span></h2>
+                    <p>Explore these articles to discover practical ways to reduce your impact on fast fashion and make more sustainable choices.</p>
+                    <div class="scroll-articles">
+                      
+                      <div class="article-box" onclick="window.open('https://scratchandstitch.com/30-denim-upcycling-ideas-using-old-jeans/', '_blank')">
+                        <img class="article-image" src="images/articles/252244ce79b6aa8f49725aae63156fab.jpg" alt="30 Denim Upcycling Ideas Using Old Jeans">
+                        <div class="article-overlay">
+                          <div class="article-text">30 Denim Upcycling Ideas Using Old Jeans</div>
+                        </div>
+                      </div>
+                  
+                      <div class="article-box" onclick="window.open('https://www.bbc.com/future/article/20230227-how-to-recycle-your-clothes', '_blank')">
+                        <img class="article-image" src="images/articles/43446eb7b9c6851c30cf8ac11087a63b.jpg" alt="Article 2">
+                        <div class="article-overlay">
+                          <div class="article-text">Can clothes ever be fully recycled?</div>
+                        </div>
+                      </div>
+                      
+                      <div class="article-box" onclick="window.open('https://www.harpersbazaar.com/uk/fashion/what-to-wear/g19491797/the-best-and-still-chic-sustainable-brands/', '_blank')">
+                        <img class="article-image" src="images/articles/ae536641fdb9e6557fb51196351357a5.jpg" alt="Article 3">
+                        <div class="article-overlay">
+                          <div class="article-text">Our favourite sustainable brands to add to your wardrobe</div>
+                        </div>
+                      </div>
+                      
+                      <div class="article-box" onclick="window.open('https://www.theguardian.com/fashion/2024/feb/12/the-hidden-plastics-in-our-clothes-and-how-to-avoid-them', '_blank')">
+                        <img class="article-image" src="images/articles/b1976e793a3725b1f7c5ad19ae8a090a.jpg" alt="Article 4">
+                        <div class="article-overlay">
+                          <div class="article-text"> The hidden plastics in our clothes – and how to avoid them</div>
+                        </div>
+                      </div>
+                      
+                      <div class="article-box" onclick="window.open('https://thethingswellmake.com/recycled-t-shirt-bags-review-of-7-ways/', '_blank')">
+                        <img class="article-image" src="images/articles/ba618532c4f05702a5b02f638a52e336.jpg" alt="Article 5">
+                        <div class="article-overlay">
+                          <div class="article-text">How to Make a T-shirt Bag: 8 Ways to Make a Bag from a Shirt</div>
+                        </div>
+                      </div>
+                      
+                      <div class="article-box" onclick="window.open('https://www.vogue.co.uk/fashion/article/quitting-fast-fashion-buying-second-hand', '_blank')">
+                        <img class="article-image" src="images/articles/cf2efb1d529bbd02a68d01313d6dc24b.jpg" alt="Article 6">
+                        <div class="article-overlay">
+                          <div class="article-text">Quitting Fast Fashion A Decade Ago Taught Me The Joys Of Shopping Second-Hand</div>
+                        </div>
+                      </div>
+                      
+                    </div>
+                  </div>
+                  
+            </section>
+        </div>
+        <!--Footer-->
+        <div class="footer">
+            <h1>THE ATACAMA DESERT NEEDS YOUR HELP.</h1>
+        </div>
+
+
+        
+        <!--GSAP Javascript-->
+        <script src="https://assets.codepen.io/16327/ScrambleTextPlugin3.min.js"></script>  
+        <script src='https://assets.codepen.io/16327/ScrollSmoother.min.js?v=3.10.0e'></script>   
+        <script
+        src="https://code.jquery.com/jquery-3.4.1.min.js"
+        integrity="sha256-CSXorXvZcTkaix6Yvo6HppcZGetbYMGWSFlBw8HfCJo="
+        crossorigin="anonymous"></script>    
+        <script src="gsap-member/minified/gsap.min.js"></script> 
+        <script src="gsap-member/minified/ScrollTrigger.min.js"></script> 
+        <script src="gsap-member/minified/Observer.min.js"></script>
+        
+        <!--Shoelace-->
+        <script type="module" src="https://cdn.jsdelivr.net/npm/@shoelace-style/shoelace@2.18.0/cdn/shoelace-autoloader.js"></script> 
+        <script type="module" src="https://cdn.jsdelivr.net/npm/@shoelace-style/shoelace@2.18.0/cdn/components/icon-button/icon-button.js"></script>
+
+        <!--Javascript coding-->
+        <script src="main.js"></script>
+
+    </body>
+</html>

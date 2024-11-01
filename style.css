@@ -1,0 +1,658 @@
+/*Adding imported font to CSS*/
+@font-face {
+    font-family: 'Bellet';
+    src: url('fonts/Bellet-Regular/BelletRegular_FREE_FOR_PERSONAL_USE_ONLY.ttf') format('truetype');
+}
+
+html {
+    scrollbar-width: none;
+    scroll-behavior: smooth;
+    margin: 0;
+}
+body {
+    margin: 0;
+    padding: 0;
+    background-image: url('images/valley-moon-atacama-desert-chile.jpg');
+    background-position: center;
+    background-repeat: no-repeat;
+    background-size: cover;
+    background-attachment: fixed; /* Creates the parallax effect */
+    width: 100%;
+    overflow: hidden scroll;
+    -ms-overflow-style: none;
+}
+
+/* NAVGATION BAR */
+#navbar {
+    position: fixed;
+    display: block;
+    top: 0;
+    width: 100%;
+    background-color: rgba(0, 0, 0, 0.8); /* Semi-transparent background */
+    transition: top 0.3s; /* Smooth transition for appearing/disappearing */
+    text-align: center; /* Centers the content inside */
+    overflow:hidden;
+    z-index:1000;
+}
+#navbar a {
+    display:inline-block;
+    padding: 15px;
+    padding-left: 50px;
+    padding-right: 50px;
+    gap: 50px;
+    text-align: center;
+    color: white;
+    text-decoration: none;
+    font-family: Arial, Helvetica, sans-serif;
+    font-size: 15px;
+    font-weight: lighter;
+    letter-spacing: 2px;
+    text-transform: uppercase;
+    transition: color 0.3s ease;
+}
+#navbar a:hover{
+    color: #ff8c00;
+    font-weight: bold;
+}
+#navbar.hidden {
+    transform: translateY(-100%); /* Move navbar up out of view */
+}
+
+/* HERO PAGE */
+#home{
+    background: linear-gradient(rgba(0, 0, 0, 0.2), rgba(0, 0, 0, 0.7));
+    position: relative;
+}
+.hero-image {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    position: relative;
+    height:100vh;
+}
+#hero-text{
+    font-family: 'Bellet', sans-serif;
+    font-size:40px;
+    letter-spacing: 2px;
+    color: white;
+    text-transform:none;
+    text-align: center;
+}
+
+/* //Scroll Icon Container Styling for Hero Section */
+.scroll-icon-container {
+    position: absolute;
+    bottom: 0;
+    margin: 0 auto;
+    font-size: 50px;
+    cursor: pointer;
+    z-index: 10; /* Ensures it’s on top of the hero image */
+}
+.scroll-icon-container svg {
+    -moz-animation: bounce 2s infinite;
+    -webkit-animation: bounce 2s infinite;
+    animation: bounce 2s infinite;
+}
+@keyframes bounce {
+    0%, 20%, 50%, 80%, 100% {
+        -moz-transform: translateY(0);
+        -ms-transform: translateY(0);
+        -webkit-transform: translateY(0);
+        transform: translateY(0);
+    }
+    40% {
+        -moz-transform: translateY(-10px);
+        -ms-transform: translateY(-10px);
+        -webkit-transform: translateY(-10px);
+        transform: translateY(-10px);
+    }
+    60% {
+        -moz-transform: translateY(-5px);
+        -ms-transform: translateY(-5px);
+        -webkit-transform: translateY(-5px);
+        transform: translateY(-5px);
+    }
+}
+
+/* ABOUT SECTION */
+#about {
+    height: 100%;
+    background:rgba(0, 0, 0, 0.7);
+    overflow-x: hidden;
+    position: relative;
+}
+  /* Scroll swipe left images*/
+.comparisonSection {
+    position: relative;
+    padding-bottom: 56.25%; /* to maintain aspect ratio (responsive!) */
+}
+.comparisonImage {
+    width: 100%;
+    height: 100%;
+}
+.beforeImage{
+    opacity: 0;
+}
+.afterImage {
+    position: absolute;
+    overflow: hidden;
+    top: 0;
+    transform: translate(100%, 0px);
+}
+.afterImage img {
+    transform: translate(-100%, 0px);
+    position: fixed;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    object-fit: cover;
+    z-index: -1;  /* Place it behind everything */
+}
+.comparisonImage img {
+    width: 100%;
+    height: 100%;
+    position: absolute;
+    top: 0;
+}
+  /* Translucent Overlay */
+#about .overlayInfo {
+    text-align: center;
+    height: 60vh; /* Adjusted for shorter height */
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    position: absolute;
+    top: 20vh;
+    width: 100%;
+    background: rgba(0, 0, 0, 0.6); /* Translucent black overlay */
+    flex-direction: column;
+    z-index: 2;
+    pointer-events: none;
+    padding-top: 10vh;
+    padding-bottom: 5vh;
+    opacity: 0; /* Start with hidden overlay */
+    transform: scale(0.8); /* Start slightly scaled down */
+    transition: opacity 0.1s ease-out, transform 0.1s ease-out; /* Smooth transition */
+}
+/* Apply bounceIn animation only when .animate class is added */
+#about .overlayInfo.animate {
+    animation: bounceIn 1.5s ease-in forwards;
+}
+/* Keyframes for bounceIn animation */
+@keyframes bounceIn {
+    0% {
+        transform: scale(0.1);
+        opacity: 0;
+    }
+    100% {
+        transform: scale(1);
+        opacity: 1;
+    }
+}
+/* Main Stats Heading */
+.stats{
+    font-size: 70px; /* Large size for main stat */
+    font-family:Georgia, 'Times New Roman', Times, serif;
+    font-weight:800;
+    margin: 0;
+    color: #ff6200; /* Bright orange for emphasis */
+}
+.stats p {
+    font-size: 18px;
+    color: #ffffff;
+    max-width: 600px;
+    margin: 10px auto;
+    font-weight: lighter;
+    width: 50vh;
+    padding-top: 10px;
+    font-family: Arial, Helvetica, sans-serif;
+}
+/*Additional Info Blocks*/
+.additional-info {
+    display: flex;
+    justify-content: space-around;
+    align-items: center;
+    margin-top: 20px;
+    gap: 20px;
+    flex-wrap: wrap;
+}
+.info-block {
+    width: 30%; /* Control width for responsiveness */
+    padding: 20px;
+    border-radius: 8px;
+    text-align: center;
+    font-size: 50px;
+    font-family:Georgia, 'Times New Roman', Times, serif;
+    font-weight:800;
+    color: #ff6200;
+    margin: 0;
+}
+.info-block p {
+    font-size: 1rem;
+    color: #ffffff;
+    margin-top: 10px;
+    font-weight: lighter;
+    font-family: Arial, Helvetica, sans-serif;
+}
+/*Buttons reveal info on hover*/
+#material{ 
+    position: absolute;
+    top:60%;
+    left:44%;
+    width:100px;
+}
+#ghg-emissions{
+    position: absolute;
+    top:10%;
+    left:60%;
+    width:100px;
+}
+#water-effect{
+    position: absolute;
+    top:83%;
+    left:76%;
+    width:100px;
+}
+#labour-impact{
+    position: absolute;
+    top:27.5%;
+    left:18.5%;
+    width:100px;  
+}
+/*Clothing image gallery*/
+.carousel{
+    background: linear-gradient(rgb(0,0,0,0.3), rgb(0,0,0,0.6));
+    height: 100vh;
+    display: flex;
+    align-items: center;
+    overflow: hidden;
+    padding-left: 50px;
+}
+.carousel img {
+    justify-content: center;
+    object-fit: contain; 
+    max-height: 100%; 
+    max-width: 100%;
+}
+.found{
+    font-family:"bellet";
+    font-weight: normal;
+    color: rgba(255, 255, 255, 0.552);
+    font-size: 50px;
+    padding: 10px;
+}
+
+
+/*FASHION SHOW SECTION */
+#fashion-show {
+    position: relative;
+    font-family: Arial, Helvetica, sans-serif;
+    font-size: 18px;
+    justify-content: center;
+    align-items: center;
+    background-color: rgb(0, 0, 0);
+    padding-top: 50px;
+    padding-bottom: 70px;
+}
+/*Marquee title (https://codepen.io/Knovour/pen/boJNPN)*/
+.content {
+    font-family: "bellet";
+    color:#ff6200 ;
+    font-size: 100px;
+    letter-spacing: 5px;
+}
+.marquee {
+    position: relative;
+    width: 100vw;
+    max-width: 100%;
+    height: 200px;
+    overflow-x: hidden;
+}
+  .track {
+    position: absolute;
+    white-space: nowrap;
+    will-change: transform;
+    animation: marquee 32s linear infinite;
+}  
+  @keyframes marquee {
+    from { transform: translateX(0); }
+    to { transform: translateX(-50%); }
+}
+#fashion-show p{
+    color: white;
+    max-width: 50%;
+    text-align:justify;
+    margin: 0 auto;
+}
+
+ /*fashion show video*/
+.ratio{
+    align-items: center;
+    margin: 0 auto;
+    justify-content: center;
+    display: flex;
+}
+#videoDesfile {
+    position: relative;
+    height: 100vh;
+    width: 100%;
+    padding: 50px;
+}
+
+/*Links to fashion website -blob hover effect (https://codepen.io/hilwat/pen/BeemVX)*/ 
+*, *:before, *:after {
+    box-sizing: border-box;
+    margin: 0;
+    padding: 0;
+}
+.buttons {
+    margin-top: 50px;
+    text-align: center;
+    border-radius: 20px;
+}
+.blob-btn {
+    z-index: 1;
+    position: relative;
+    padding: 20px 46px;
+    margin-bottom: 30px;
+    text-align: center;
+    text-transform: uppercase;
+    color: #ff6200;
+    font-size: 16px;
+    font-weight: bold;
+    background-color: transparent;
+    outline: none;
+    border: none;
+    transition: color 0.5s;
+    cursor: pointer;
+    border-radius: 20px;
+}
+.blob-btn:before {
+    content: "";
+    z-index: 1;
+    position: absolute;
+    left: 0;
+    top: 0;
+    width: 100%;
+    height: 100%;
+    border: 2px solid #ff6200;
+    border-radius: 20px;
+}
+.blob-btn:after {
+    content: "";
+    z-index: -2;
+    position: absolute;
+    left: 3px; /* 2px * 1.5 */
+    top: 3px; /* 2px * 1.5 */
+    width: 100%;
+    height: 100%;
+    transition: all 0.3s 0.2s;
+    border-radius: 20px;
+}
+.blob-btn:hover {
+    color: #000000;
+}
+.blob-btn:hover:after {
+    transition: all 0.3s;
+    left: 0;
+    top: 0;
+    border-radius: 20px;
+}
+.blob-btn__inner {
+    z-index: -1;
+    overflow: hidden;
+    position: absolute;
+    left: 0;
+    top: 0;
+    width: 100%;
+    height: 100%;
+    border-radius: 20px;
+    background: #000000;
+}
+.blob-btn__blobs {
+    position: relative;
+    display: block;
+    height: 100%;
+    filter: url('#goo');
+}
+.blob-btn__blob {
+    position: absolute;
+    top: 2px; /* $borderW */
+    width: calc(100% / 4); /* dividing by $numOfBlobs */
+    height: 100%;
+    background: #ff6200;
+    border-radius: 100%;
+    transform: translate3d(0, 150%, 0) scale(1.7);
+    transition: transform 0.45s;
+}
+@supports (filter: url('#goo')) {
+    .blob-btn__blob {
+      transform: translate3d(0, 150%, 0) scale(1.4);
+    }
+}
+.blob-btn__blob:nth-child(1) {
+    left: 0;
+    transition-delay: 0s;
+}
+.blob-btn__blob:nth-child(2) {
+    left: calc(120% / 4); /* dividing by $numOfBlobs */
+    transition-delay: 0.08s;
+}
+.blob-btn__blob:nth-child(3) {
+    left: calc(2 * (120% / 4));
+    transition-delay: 0.16s;
+}
+.blob-btn__blob:nth-child(4) {
+    left: calc(3 * (120% / 4));
+    transition-delay: 0.24s;
+}
+.blob-btn:hover .blob-btn__blob {
+    transform: translateZ(0) scale(1.7);
+}
+@supports (filter: url('#goo')) {
+    .blob-btn:hover .blob-btn__blob {
+      transform: translateZ(0) scale(1.4);
+    }
+}
+
+ /*fashion show parallax gallery*/
+.container {
+    display: block;
+    width: 90%;
+    height: 100vh;
+    margin: 0px auto;
+    position: relative;
+    overflow: auto;
+}
+.row {
+    position: absolute;
+    width: 100%;
+    -webkit-transition: all 0.5s;
+    transition: all 0.5s;
+}
+.col1 {
+    width: 33%;
+    height: auto;
+}
+.col2 {
+    width: 33%;
+    height: auto;
+    margin-left: calc(33% + 10px);
+}
+.col3 {
+    width: 33%;
+    height: auto;
+    margin-left: calc(66% + 20px);
+}
+.gallery {
+    position: relative;
+    z-index: 4;
+}
+.gallery .gallery_item {
+    padding-bottom: 10px;
+    text-align: left;
+}
+.gallery .gallery_item img {
+    width: 100%;
+    height: auto;
+}
+
+
+/*HOW TO HELP SECTION*/
+#how-to-help{ 
+    background-image: url('images/MM9940_220518_0582.jpeg');
+    background-position: center;
+    background-repeat: no-repeat;
+    background-size: cover;
+    background-attachment: fixed; /* Creates the parallax effect */
+    width: 100%;
+    overflow: hidden;
+    -ms-overflow-style: none;
+}
+/*Quiz*/
+#fashion-footprint-quiz { 
+    padding:20%;
+    padding-top: 10px;
+    text-align: left;
+    background: #00000070;
+}
+#fashion-footprint-quiz h2{
+    font-family: "bellet";
+    font-size: 50px;
+    color: rgb(255, 255, 255);
+}
+#fashion-footprint-quiz p{ 
+    font-family: Arial, Helvetica, sans-serif;
+    color: white;
+    font-size: 20px;
+    padding-bottom: 30px;
+}
+
+/*spinning circle text*/
+.text {
+    font-weight: 600;
+    letter-spacing: 1.7px;
+    font-family: 'bellet';
+    font-size: 17px;
+    fill: #ffffff;
+    text-shadow: 2px 0px #cccccc63;
+}
+.main {
+    display: grid;
+    align-items: center;
+    justify-items: right;
+}
+.main img {
+    animation-name: rotate-circle;
+    animation-direction: reverse;
+    animation-duration: 5s;
+    animation-timing-function: linear;
+    animation-iteration-count: infinite;
+    grid-area: 1 / 1;
+}
+#rotatingText {
+    animation-name: rotate-circle;
+    animation-duration: 10s;
+    animation-timing-function: linear;
+    animation-iteration-count: infinite;
+    grid-area: 1 / 1;
+}
+@keyframes rotate-circle {
+    to {
+      transform: rotate(1turn);
+    }
+}
+
+/*Article layout*/
+.articles{
+    background:linear-gradient(#00000070,rgba(0, 0, 0, 1) );
+    padding-left:20%;
+    padding-right: 20%;
+    height: 100vh;
+}
+.articles h2{
+    padding-left:10px;
+    color: white;
+    font-size: 50px;
+    font-family:"bellet";
+    padding-bottom: 30px;
+}
+.articles span{
+    color: #ff6200;
+    font-size: 80px;
+}
+.articles p{
+    font-family: Arial, Helvetica, sans-serif;
+    color: white;
+    font-size: 20px;
+    padding-bottom: 30px;
+}
+.scroll-articles {
+    display: flex;                    /* Horizontal layout */
+    overflow-x: auto;                 /* Enable horizontal scrolling */
+    gap: 10px;                        /* Space between each item */
+    padding: 10px;
+    scroll-snap-type: x mandatory;    /* Optional: snap effect */
+}
+.article-box {
+    position: relative;
+    flex: 0 0 auto;                   /* Prevent items from shrinking */
+    width: 300px;                     /* Set fixed width for each item */
+    height: 400px;                    /* Set fixed height for each item */
+    cursor: pointer;
+    scroll-snap-align: start;         /* Optional: align snap to start */
+}
+.article-image {
+    width: 100%;
+    height: 100%;
+    object-fit: cover;                /* Keep aspect ratio */
+    display: block;
+    border-radius: 10px;              /* Round corners for images */
+}  
+/*hover over article images to display text*/
+.article-overlay {
+    position: absolute;
+    top: 0;
+    bottom: 0;
+    left: 0;
+    right: 0;
+    background-color: rgba(0, 0, 0, 0.7); /* Semi-transparent overlay */
+    opacity: 0;
+    transition: opacity 0.5s ease;
+    border-radius: 10px;              /* Match image corners */
+    display: flex;
+    align-items: center;
+    justify-content: center;
+}
+.article-box:hover .article-overlay {
+    opacity: 1;                       /* Show overlay on hover */
+}
+.article-text {
+    color: white;
+    font-family: Arial, Helvetica, sans-serif;
+    font-size: 20px;
+    text-align: center;
+    padding: 10px;
+}
+
+/*FOOTER*/
+.footer{
+    background:linear-gradient(rgba(0, 0, 0, 0.5),rgba(0, 0, 0, 0.7) ), url('images/valley-moon-atacama-desert-chile.jpg');
+    background-position: center;
+    background-repeat: no-repeat;
+    background-size: cover;
+    width: 100%;
+    overflow: hidden scroll;
+    height: 200px;
+    padding:50px;
+    display: flex;               
+    align-items: center;        
+    justify-content: center; }
+.footer h1{ 
+    font-family: "bellet";
+    color:rgba(255, 255, 255, 0.737);
+    font-size: 20px;
+    letter-spacing: 2px;
+    margin: 0;
+}
